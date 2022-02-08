@@ -1,0 +1,22 @@
+ Q   W   E   R   T               Y   U   I   O   P
+ A   S   D   F   G               H   J   K   L   ;
+ Z   X   C   V   B               N   M   ,   .   /
+                SFT SPC     RET TO1                   
+
+Hold key:
+ •   •   •   •   •               •   •   •   •   •
+ •  WIN ALT CTL  •               •  CTL ALT WIN  '
+ •   •   •   •   •               •   •   -   !   _
+                 •  TAB          •                
+
+Layer 1:
+ 1   2   3   4   5               6   7   8   9   0
+BSP  ~   |   +   •              LFT DWN UPP RGT DEL
+ESC  `   \   =   •              TAB  •   •   •   •
+                TO0 SFT     ALT TO2                   
+
+Layer 2:
+ •  PRV P/P NXT  (               )  F7  F8  F9  F10
+BSP MTE VDN VUP  {               }  F4  F5  F6  F11
+ •   •   •   •   [               ]  F1  F2  F3  F12
+                TO0 SFT     CTL TO1
