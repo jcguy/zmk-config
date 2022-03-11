@@ -9,12 +9,12 @@
 / {
 
   combos {
+    compatible = "zmk,combos";
     combo_sys {
       timeout-ms = <30>;
       key-positions = <7 8 9>;
       bindings = <&to 1>;
     };
-
   };
 
   behaviors {
@@ -52,7 +52,7 @@
 
     alpha { /* 0 */
       bindings = <
-        &kp Q        &hm LCTRL W &hm LALT E  &hm LGUI R &kp T                    &kp Y     &hm RGUI U &hm RALT I      &hm RCTRL O   %kp P
+        &kp Q        &hm LCTRL W &hm LALT E  &hm LGUI R &kp T                    &kp Y     &hm RGUI U &hm RALT I      &hm RCTRL O   &kp P
         &kp A        &hl 3     S &hl 2    D  &hl 1    F &kp G                    &kp H     &hl 1    J &hl 2    K      &hl 3     L   &kp SEMI
         &hm LSHIFT Z &kp X       &kp C       &kp V      &kp B                    &kp N     &kp M      &kp COMMA       &kp DOT       &hm RSHIFT SLASH
                                                         &kp BSPC &kp SPC &kp RET &mo 4
