@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: delusionallogic
+      url-base: https://github.com/DelusionalLogic
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: delusionallogic
+      revision: mouse0buttons
       import: app/west.yml
   self:
     path: config
