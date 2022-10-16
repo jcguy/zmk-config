@@ -1,0 +1,89 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+/ {
+
+  combos {
+    compatible = "zmk,combos";
+    combo_sys {
+      timeout-ms = <30>;
+      key-positions = <7 8 9>;
+      bindings = <&to 1>;
+    };
+  };
+
+  behaviors {
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS";
+      #binding-cells = <2>;
+      tapping-term-ms = <300>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    hl: homerow_layers {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_LAYERS";
+        #binding-cells = <2>;
+        tapping-term-ms = <250>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&sl>, <&kp>;
+    };
+    td: tapdance {
+      compatible = "zmk,behavior-hold-tap";
+      label = "TAPDANCE";
+      #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      quick_tap_ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    alpha { /* 0 */
+      bindings = <
+        &kp Q        &hm LCTRL W &hm LALT E  &hm LGUI R &kp T                    &kp Y     &hm RGUI U &hm RALT I      &hm RCTRL O   &kp P
+        &kp A        &hl 3     S &hl 2    D  &hl 1    F &kp G                    &kp H     &hl 1    J &hl 2    K      &hl 3     L   &kp SEMI
+        &hm LSHIFT Z &kp X       &kp C       &kp V      &kp B                    &kp N     &kp M      &kp COMMA       &kp DOT       &hm RSHIFT SLASH
+                                                        &kp BSPC &kp SPC &kp RET &mo 4
+        >;
+    };
+
+    sys { /* 1 */
+      bindings = <
+        &kp N1    &kp N2    &kp N3    &kp N4     &kp N5                       &kp N6   &kp N7      &kp N8          &kp N9            &kp N0
+        &kp BSPC  &kp TILDE &kp PIPE  &kp PLUS   &kp LG(C)                    &kp LEFT &kp DOWN    &kp UP          &kp RIGHT         &kp DEL
+        &kp ESC   &kp GRAVE &kp BSLH  &kp EQUAL  &kp LG(V)                    &kp TAB  &kp LC(TAB) &kp LC(LS(TAB)) &kp LS(LC(LG(4))) &trans
+                                                 &to 0 &kp LSHIFT    &kp RGUI &kp RALT
+        >;
+    };
+
+    sym { /* 2 */
+      bindings = <
+        &trans   &kp K_PREV &kp K_PP      &kp K_NEXT   &kp LPRN                         &kp RPRN     &kp LBKT     &kp RBKT     &kp F9 &kp F10
+        &kp BSPC &kp K_MUTE &kp K_VOL_DN  &kp K_VOL_UP &kp LS(LBKT)                     &kp LS(RBKT) &kp LPRN     &kp RPRN     &kp F6 &kp F11
+        &trans   &trans     &trans        &trans       &kp LBKT                         &kp RBKT     &kp LS(LBKT) &kp LS(RBKT) &kp F3 &kp F12
+                                                       &kp LCTRL    &kp LSHIFT &kp LGUI &kp RALT
+        >;
+    };
+
+    msc { /* 3 */
+      bindings = <
+        &kp F1  &kp F2  &kp F3 &kp F4 &kp F5                         &kp F6 &kp F7     &kp F8       &kp F9       &kp F10
+        &kp F11 &kp F12 &trans &trans &trans                         &trans &kp K_PREV &kp K_VOL_DN &kp K_VOL_UP &kp K_NEXT
+        &trans  &trans  &trans &trans &trans                         &trans &kp K_MUTE &kp F2       &kp F3       &kp F12
+                                      &kp LCTRL &kp LSHIFT &kp RGUI  &kp RALT
+        >;
+    };
+  };
+};
