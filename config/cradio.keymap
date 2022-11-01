@@ -21,13 +21,18 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <260>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings =
                 <&kp>,
                 <&kp>;
         };
+        mkp: behavior_mouse_key_press {
+            compatible = "zmk,behavior-mouse-key-press";
+            label = "MOUSE_KEY_PRESS";
+            #binding-cells = <1>;
+        }
     };
 
     keymap {
@@ -44,18 +49,18 @@
 
         num {
             bindings = <
-&kp N1             &kp N2   &kp N3     &kp N4     &kp N5            &kp N6    &kp N7         &kp N8       &kp N9   &kp N0
-&kp BACKSPACE      &kp ESC  &kp MINUS  &kp EQUAL  &bt BT_NXT        &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &kp SINGLE_QUOTE
-&kp LC(BACKSPACE)  &trans   &mkp RCLK  &mkp LCLK  &bt BT_PRV        &trans    &trans         &trans       &trans   &kp BACKSLASH
-                                       &trans     &bt BT_CLR        &out OUT_TOG    &mo 3
+&kp N1             &kp N2   &kp N3        &kp N4     &kp N5            &kp N6     &kp N7         &kp N8       &kp N9     &kp N0
+&kp BACKSPACE      &kp ESC  &kp MINUS     &kp EQUAL  &bt BT_NXT        &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP  &kp END    &kp SINGLE_QUOTE
+&kp LC(BACKSPACE)  &mkp RCLK   &mkp MCLK  &mkp LCLK  &bt BT_PRV        &trans     &trans         &trans       &trans     &kp BACKSLASH
+                                          &trans     &bt BT_CLR        &out OUT_TOG    &mo 3
             >;
         };
 
         sys {
             bindings = <
-&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F10    &trans    &trans    &trans  &trans  &trans
-&kp TAB    &kp F4  &kp F5  &kp F6  &kp F11    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans     &kp F7  &kp F8  &kp F9  &kp F12    &trans    &trans    &trans  &trans  &trans
+&kp GRAVE  &kp F1  &kp F2  &kp F3  &kp F10    &trans    &trans     &trans     &trans     &trans
+&kp TAB    &kp F4  &kp F5  &kp F6  &kp F11    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp SINGLE_QUOTE
+&trans     &kp F7  &kp F8  &kp F9  &kp F12    &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK  &trans
                            &mo 3   &trans     &trans    &trans
             >;
         };
